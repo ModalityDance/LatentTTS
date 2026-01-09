@@ -28,7 +28,7 @@
 
 </div>
 
-This is the implementation for the paper [**Parallel Test-Time Scaling for Latent Reasoning Models**](https://huggingface.co/papers/2510.07745), enabling efficient exploration of continuous thought spaces through stochastic sampling and reward model-guided search. It provides implementations of two stochastic sampling methods (Monte Carlo Dropout and Additive Gaussian Noise) and a LatentRM for best-of-$N$ and beam search strategies. This repository includes training scripts, evaluation pipelines, and inference code for multiple backbone models including COCONUT, CODI, and CoLaR, evaluated on benchmarks such as GSM8K Test, GSM8K Hard, and MultiArith.
+This is the implementation for the paper [**Parallel Test-Time Scaling for Latent Reasoning Models**](https://huggingface.co/papers/2510.07745), enabling efficient exploration of continuous thought spaces through stochastic sampling and reward model-guided search. It provides implementations of two stochastic sampling methods (Monte Carlo Dropout and Additive Gaussian Noise) and a LatentRM for best-of-N and beam search strategies. This repository includes training scripts, evaluation pipelines, and inference code for multiple backbone models including COCONUT, CODI, and CoLaR, evaluated on benchmarks such as GSM8K Test, GSM8K Hard, and MultiArith.
 
 ### 🪐 Key Features
 
@@ -36,7 +36,7 @@ This is the implementation for the paper [**Parallel Test-Time Scaling for Laten
 Two complementary approaches for exploring continuous thought spaces: Monte Carlo Dropout and Additive Gaussian Noise, enabling diverse reasoning path generation during inference.
 
 🌌 **Latent Reward Model (LatentRM)**
-A trained reward model that guides best-of-$N$ selection and beam search, significantly improving reasoning accuracy by identifying high-quality latent reasoning paths.
+A trained reward model that guides best-of-N selection and beam search, significantly improving reasoning accuracy by identifying high-quality latent reasoning paths.
 
 🧩 **Multi-Backbone Support**
 Comprehensive support for COCONUT, CODI, and CoLaR frameworks, making it easy to apply test-time scaling techniques across different latent reasoning architectures.
