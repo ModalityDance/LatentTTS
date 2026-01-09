@@ -1,0 +1,37 @@
+run_name: "run1"
+metric_for_best_model: "test_n_64_recall_at_1"
+output_dir: "/workspace/model-out/"
+loss_type: "ce"
+
+
+train_dataset: "latent-data/coconut/train"
+
+valid_dataset: 
+  "test_n_64": "latent-data/coconut/valid-64"
+  "test_n_4": "latent-data/coconut/valid-4"
+
+
+
+
+seed: 42
+per_device_train_batch_size: 2048
+per_device_eval_batch_size: 2048
+
+gradient_accumulation_steps: 1
+
+optim: "paged_adamw_8bit"
+lr_scheduler_type: "cosine"
+warmup_ratio: 0.1
+
+max_grad_norm: 1.0
+num_train_epochs: 30
+early_stopping_patience: 24
+eval_frequency: 4
+learning_rate: 1.0e-4
+bf16: true
+
+save_only_model: true
+save_total_limit: 12
+
+logging_steps: 5
+

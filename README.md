@@ -1,289 +1,66 @@
-> [!NOTE]
-> 🪐 **Internal Template Notice (v1.0)**  
->  
-> This README serves as a **demonstration template (version 1.0)** for internal use within the **ModalityDance Lab**.  
->  
-> **Author:** [Hongru Cai](mailto:henry.hongrucai@gmail.com)
->
-> **Update date**: 2025.12.10
->  
-> **Usage scope:** Internal use only. Please do not redistribute or share externally.
-> 
-> If you have questions, suggestions, or proposed improvements to this template, feel free to contact me.
-> 
-> Use GitHub callouts (`[!NOTE]`, `[!TIP]`, `[!IMPORTANT]`, `[!WARNING]`) **selectively** to help readers understand critical information.
-> 
-> Some componets may not render properly in VS Code preview, copy to preview on GitHub if needed.
-
-> [!IMPORTANT]
-> 🪐 **About This Template**  
->  
-> This template provides a **minimal, example-based framework** for releasing research code.  
-> It is intentionally lightweight and designed to be extended with additional components, including:
-> - more demos or runnable examples,
-> - interactive or web-based interfaces,
-> - detailed documentation or tutorials,
-> - PyPI packages or other distribution formats,
-> - or any other project-specific features.
-
-> [!TIP]
-> 🪐 **Customization & Extension**  
->  
-> All visual elements (e.g., icons, styles, figures, layouts) are **fully customizable**.  
-> Feel free to replace or redesign them to better fit your project.
-
-> [!WARNING]
-> 🪐 **Before Public Release**  
-> 
-> - Ensure that the final README contains only **project-specific content**.  
-> - Verify that **all links are clickable and correctly resolved** (paper, code, data, demos).  
-> - Check that **all figures and images render correctly** (paths, formats, and visibility).  
-> - Confirm that the **citation section is complete and up to date**, and matches the final paper version.  
-> - Confirm that a **LICENSE file is present**, and that the information inside the file is accurate.  
-> - Verify that the **project page link is correct and up to date**.
-> - Check that the **News section is current**, and remove any placeholder entries.
-> - Please **remove all instructional comments and internal notes** in this README. 
-
-
-<!-- Some Callout Examples you can use:
-
-> [!NOTE]
-> Use this callout for neutral clarifications or important contextual information
-> (e.g., assumptions, default settings, or environment constraints).
-
-> [!TIP]
-> Use this callout to suggest optional improvements or best practices
-> (e.g., faster training, better performance, or convenience tricks).
-
-> [!IMPORTANT]
-> Use this callout to highlight steps that are required to reproduce results
-> or critical instructions that should not be skipped.
-
-> [!WARNING]
-> Use this callout to alert readers to potential pitfalls, breaking changes,
-> or actions that may cause incorrect results or failures. -->
-
-
-
-<!--
-Header, Logo, Title, Quick Links
-
-Points:
-1. A logo image placed in assets/, e.g., assets/logo.png.  
-   You may design one manually or generate using AI.
-
-2. A project title aligned with the codebase, method name, or paper name.
-
-3. Links:
-    Required:
-    - Project page (GitHub repo page if no dedicated project page is available).
-    - Paper link (arXiv page).
-    Optional:
-    - HuggingFace models (if the project releases model weights).
-    - HuggingFace datasets (if the project provides datasets).
-    - Community links such as Slack, Discord, Feishu, WeChat, etc. (if applicable).
-    - Trending repository badge (if applicable).
-
--->
-
-
 <a name="readme-top"></a>
 
 <div align="center">
-  <img src="./assets/LOGO.png" alt="Project Logo" width="300">
-  <h1 align="center">Project Name: Short tagline</h1>
+  <h1 align="center">LatentTTS: Parallel Test-Time Scaling for Latent Reasoning Models</h1>
 </div>
 
 <div align="center">
 
-  <!-- Project Page -->
-  <a href="{project_page_url}">
-    <img src="https://img.shields.io/badge/Project-Page-6a5acd?style=for-the-badge" alt="Project Page">
-  </a>
+<!-- Paper Link -->
 
-  <!-- Paper Link -->
-  <a href="{paper_url}">
+<a href="https://arxiv.org/abs/2510.07745">
     <img src="https://img.shields.io/badge/Paper-arXiv-b31b1b?style=for-the-badge&logo=arxiv" alt="Paper">
   </a>
 
-  <!-- HuggingFace Models -->
-  <a href="{huggingface_url}">
+<!-- HuggingFace Models -->
+
+<a href="https://huggingface.co/dd101bb/latentRM">
     <img src="https://img.shields.io/badge/HuggingFace-Models-fcc21b?style=for-the-badge&logo=huggingface&logoColor=white" alt="HF Models">
   </a>
 
-  <!-- Optional Dataset Badge -->
-  <a href="{dataset_url}">
-    <img src="https://img.shields.io/badge/Dataset-Available-4c1?style=for-the-badge" alt="Dataset">
+<!-- HuggingFace Papers -->
+
+<a href="https://huggingface.co/papers/2510.07745">
+    <img src="https://img.shields.io/badge/HuggingFace-Papers-fcc21b?style=for-the-badge&logo=huggingface&logoColor=white" alt="HF Papers">
   </a>
 
-  <!-- Optional Community Badges -->
-  <a href="{slack_or_discord_or_feishu}">
-    <img src="https://img.shields.io/badge/Community-Join-07c160?style=for-the-badge&logo=wechat&logoColor=white" alt="Community">
-  </a>
+<img src="./assets/main.png" alt="Project Logo" width="800">
 
 </div>
 
-
-<!--
-Overview
-
-Points:
-
-1. A short paragraph (2–4 sentences) describing:
-    - What the project is.
-    - The main purpose or capability.
-    - What benefit users get.
-    - The scope or application scenario.
-    - The primary components included in this repository.
-
-2. A "Key Features" section.  
-   Each feature should include:
-    - A short title (e.g., "Modular Design", "Fast Training").
-    - A 1–2 sentence explanation of what the feature provides and why it matters.
-   
-3. Add more sections if needed.
-
-4. A main figure image placed under assets/, e.g., assets/overview.png.  
-   This image should visually summarize the system or framework.
-
--->
-
-Welcome to **Project Name**! 👋Project Name is a flexible and scalable framework designed for **core purpose, e.g., multimodal retrieval, generative search, LLM-based reasoning**.  It offers a clean and modular design, making it easy for researchers and developers to build, extend, and evaluate advanced models and pipelines. This project provides an implementation of {main contribution or goal}, including training scripts, evaluation pipelines, and optional demo resources.
-
+Welcome to **LatentTTS**! 👋 LatentTTS is a framework for parallel test-time scaling of latent reasoning models, enabling efficient exploration of continuous thought spaces through stochastic sampling and reward model-guided search. It provides implementations of two stochastic sampling methods (Monte Carlo Dropout and Additive Gaussian Noise) and a LatentRM for best-of-$N$ and beam search strategies. This repository includes training scripts, evaluation pipelines, and inference code for multiple backbone models including COCONUT, CODI, and CoLaR, evaluated on benchmarks such as GSM8K Test, GSM8K Hard, and MultiArith.
 
 ### 🪐 Key Features
 
-🧭 **Feature 1 Title**  
-Describe the core capability enabled by this feature and its role in the overall system.
+🧭 **Stochastic Sampling Methods**
+Two complementary approaches for exploring continuous thought spaces: Monte Carlo Dropout and Additive Gaussian Noise, enabling diverse reasoning path generation during inference.
 
-🌌 **Feature 2 Title**  
-Explain how this component improves effectiveness, efficiency, or modeling flexibility.
+🌌 **Latent Reward Model (LatentRM)**
+A trained reward model that guides best-of-$N$ selection and beam search, significantly improving reasoning accuracy by identifying high-quality latent reasoning paths.
 
-🧩 **Feature 3 Title**  
-Describe how this design choice supports extensibility, ablation, or future research.
+🧩 **Multi-Backbone Support**
+Comprehensive support for COCONUT, CODI, and CoLaR frameworks, making it easy to apply test-time scaling techniques across different latent reasoning architectures.
 
-
-
-### More sections if you want ...
-
-
-<div align="center">
-  <figure>
-    <img src="./assets/overview.png" alt="Overview" style="max-width: 100%; height: auto;">
-    <br>
-    <figcaption><em>Quick Overview of Project Name.</em></figcaption>
-  </figure>
-</div>
+🔬 **Comprehensive Evaluation**
+Built-in evaluation pipelines for multiple benchmarks (GSM8K Test, GSM8K Hard, MultiArith) with metrics including Pass@k, Coverage, and Voting Accuracy.
 
 
-<!--
-News 
-
-Points:
-1. Include chronological updates about the project.
-2. Each news entry should have:
-   - A date in [YYYY.MM] or [YYYY, MMM DD] format.
-   - A short highlight sentence.
-3. Optional but encouraged:
-   - Bullet lists for detailed updates.
-   - Links to papers, project pages, demos, datasets.
-   - Emojis to increase readability.
-
--->
-
-## 🔥 News 
-
-<div style="max-height: 240px; overflow-y: auto;">
-
-- **[2025.xx]** 📢📢 Exciting news! Our project has been accepted as a Spotlight paper at NeurIPS 2025!
-
-- **[2025.xx]** 🎉🎉 We released a major upgrade including new benchmarks, UI, and documentation.
-  - 📄 Paper: <a href="{paper_link}">arXiv</a>
-  - 📊 Benchmark Suite: <a href="{benchmark_link}">Link</a>
-  - 🖥️ Web UI: {description}
-
-- **[2025.xx]** 🎉🎉Initial release of the project.
-
-</div>
-
-
-<!--
-Table of Contents
-
-REQUIRED:
-1. Quick Start
-2. How It Works (Method / Framework Overview)
-3. Community
-4. Acknowledgements
-5. Citation
-
-OPTIONAL:
-1. Documentation
-2. TODO List / Roadmap
-3. Examples
-4. How to Use
-5. More sections as needed.
-
--->
 
 ## 📑 Table of Contents <span id="table-of-contents"></span>
 
-
-* <a href='#quick-start'>🚀 Quick Start</a>
-  * <a href='#installation'>Installation</a>
-  * <a href='#data'>Data</a>
-  * <a href='#running'>Running</a>
-<!-- * <a href='#examples'>⬇️ Examples</a> -->
-* <a href='#how-it-works'>✨ How It Works</a>
-<!-- * * <a href='#documentation'>📖 Documentation</a> -->
-<!-- * <a href='#todo'>📝 TODO List</a> -->
-* <a href='#community'>🤝 Community</a>
-* <a href='#acknowledgements'>🌱 Acknowledgements</a>
-* <a href='#citation'>📚 Citation</a>
-
-
-<!--
-Quick Start (Very Detailed Guide)
-
-REQUIRED:
-1. Environment Installation
-   - Must include conda or virtualenv setup.
-   - Must include Python version requirements.
-   - Must list installation commands (pip or requirements.txt).
-   - Must include GPU/CPU dependency notes if necessary.
-
-2. Dataset Preparation
-   - Instructions for downloading datasets.
-   - Show expected folder structure.
-   - Provide scripts if applicable.
-   - If dataset is on HuggingFace, include "huggingface-cli" usage.
-
-3. Run the Project
-   - Must include detailed commands to run training and/or inference.
-   - Should include training or inference example.
-   - Should be copy-paste friendly.
-   - Must can replicate your main results using these instructions.
-
-OPTIONAL:
-1. API Keys Setup
-   - Required only if project calls external APIs (OpenAI, HF Inference, etc.).
-   - Provide environment variable examples: export, .env file, etc.
-
-2. Pretrained Checkpoints
-   - Links to ckpts (HF Hub, Google Drive, etc.)
-   - Instructions for loading the checkpoint.
-
-3. Launch UI / Demo
-   - Streamlit, Gradio, Web UI—add steps if relevant.
-
-4. Additional Examples
-   - Python code snippets, CLI examples, or config-based usage.
-
-5. Other points as needed.
-
--->
+* [🚀 Quick Start](#quick-start)
+  * [Installation](#installation)
+  * [Data](#data)
+  * [Running](#running)
+* [✨ How It Works](#how-it-works)
+* [📁 Project Structure](#project-structure)
+* [🤝 Community](#community)
+* [🌱 Acknowledgements](#acknowledgements)
+* [🔗 Related Projects](#related)
+* [📚 Citation](#citation)
 
 ## 🚀 Quick Start <span id="quick-start"></span>
+
 
 
 ### 1. Installation <span id="installation"></span>
@@ -291,253 +68,189 @@ OPTIONAL:
 #### **Conda (recommended)**
 
 ```bash
-conda create -n {env_name} python=3.10 -y
-conda activate {env_name}
+conda create -n latenttts python=3.11 -y
+conda activate latenttts
 pip install -r requirements.txt
 ```
 
-#### **Pip + Virtualenv**
 
-```bash
-python3 -m venv {env_name}
-source {env_name}/bin/activate
-pip install -r requirements.txt
-```
+#### **Hardware Requirements**
 
-#### **Hardware Requirements (recommended to fill)**
-
-* GPU: **{e.g., 16GB VRAM minimum}**
-* Python: **3.9 / 3.10**
-* CUDA: **{version}**
-* Frameworks: **PyTorch {version}, Transformers {version}, etc.**
-
+* GPU: **Recommended for training and inference (CUDA-compatible)**
+* Python: **3.11**
+* CUDA: **Compatible with PyTorch 2.8.0**
+* Frameworks: **PyTorch 2.8.0, Transformers 4.52.4, Accelerate 1.7.0**
 
 ### 2. Data Preparation <span id="data"></span>
 
-#### **Download datasets**
+#### **Data Annotation**
+
+First, run the data annotation process to prepare training data for LatentRM:
 
 ```bash
-bash scripts/download_data.sh
+./run_annotation.sh
 ```
 
-or download manually from:
+This script will:
 
-* {dataset_source_1}
-* {dataset_source_2}
+- Process training data and validation data with specified batch size and sampling parameters
+- Generate annotated data for LatentRM training
+- Save results to the specified output directory
 
-#### **Expected folder structure**
-
-```plaintext
-data/
-  ├── train/
-  ├── val/
-  ├── test/
-  └── metadata.json
-```
-
-#### **Optional: preprocess data**
-
-```bash
-python scripts/preprocess.py --input data/raw --output data/processed
-```
 
 
 ### 3. Running <span id="running"></span>
 
-#### **Basic inference**
+#### **Training Configuration**
 
-```bash
-python scripts/inference.py --input example.txt --output result.json
+Configure your training parameters in the `training_args/` directory. The main configuration file is `train_coconut.yaml`:
+
+```yaml
+run_name: "run1"
+metric_for_best_model: "test_n_64_recall_at_1"
+output_dir: "/workspace/model-out/"
+# ... other parameters
 ```
 
-#### **Training example**
+#### **Model Training**
+
+Navigate to your project directory and launch training:
 
 ```bash
-bash scripts/train.sh
+cd your/path/to/latent-tts
+accelerate launch -m src.train training_args/train_coconut.yaml
 ```
 
-or
+The training process will:
+
+- Load the annotated data from the previous step
+- Train the latentRM with the specified configuration
+- Save checkpoints and evaluation results
+
+> [!NOTE]
+> Pre-trained checkpoint for COCONUT is available at [HuggingFace](https://huggingface.co/dd101bb/latentRM).
+
+#### **Evaluation and Testing**
+
+##### **Majority Voting and Coverage Testing**
+
+Run comprehensive evaluation using majority voting and coverage metrics:
 
 ```bash
-python train.py --config configs/default.yaml
+# For LLaMA model (CoLaR)
+./run_tests_llama.sh
+
+# For GPT-2 models (COCONUT and CODI)
+./run_tests.sh
 ```
 
-#### **Evaluation**
+These scripts will:
+
+- Test different sampling strategies (dropout, noise)
+- Evaluate on multiple datasets (GSM-Test, MultiArith, GSM-Hard)
+- Generate detailed performance metrics including Pass@k, Coverage, and Voting Accuracy
+
+##### **Beam Search and Best-of-N Testing**
+
+For beam search evaluation:
 
 ```bash
-python evaluate.py --checkpoint checkpoints/{ckpt_name}.pt
+./run_tts_with_rm.sh
 ```
 
+This script will:
 
-#### 4. Other optional setups
-
-
-<!--
-How It Works (Methods Overview)
-
-
-GOALS OF THIS SECTION:
-1. Provide a clear and brief explanation of how the system or method works.
-2. Make this understandable even for readers who do not yet know the technical details.
-
-Points:
-1. A high-level description of the system architecture or method.
-2. Key components/modules and their roles.
-3. A step-by-step workflow of the main process.
-4. Figures or diagrams to illustrate the method.
-
-Or:
-
-you can organize in your own way as long as it meets the goals above!!!
-
--->
-
-## ✨ How It Works <span id="how-it-works"></span>
-
-🪐 **Project Name** is built around a modular research pipeline for **{core capability}**, where each component corresponds to a well-defined stage in the overall method.  
-The system separates representation, reasoning, and output stages into independent modules, allowing controlled experimentation and analysis.  
-This design enables flexible replacement of individual components without affecting the rest of the pipeline.
-
-At a high level, the workflow proceeds as follows:
-
-1. **{Step 1: Input processing}** — {Describe how raw inputs are converted into model-friendly representations.}  
-2. **{Step 2: Core algorithm or modeling stage}** — {Explain how the main computation or retrieval happens.}  
-3. **{Step 3: Final output generation}** — {Describe how results are composed, ranked, or produced.}
-
-<div align="center">
-  <figure>
-    <img src="./assets/{method-figure.png}" alt="Method Overview" style="max-width: 100%; height: auto;">
-    <br>
-    <figcaption><em>Method overview of {Project Name}.</em></figcaption>
-  </figure>
-</div>
+- Test beam search with different `beam size` (1, 2, 4, 8)
+- Test Best-of-N with different `n_return_sequences` (1, 4, 16, 64)
+- Generate logs for different configurations
 
 
-<!--
-Community
+## 📁 Project Structure <span id="project-structure"></span>
 
-REQUIRED:
-1. Contributors section or GitHub contributors graph.
-2. Star history chart.
-3. A short paragraph encouraging engagement with the project.
-
-OPTIONAL:
-1. Social groups (Slack, Discord, WeChat, Feishu).
-2. Issue tracker link (GitHub Issues).
-3. Contribution guidelines (link to CONTRIBUTING.md if exists).
-
--->
+```
+latent-tts/
+├── src/                   # Source code
+│   ├── models/            # Model implementations
+│   │   ├── coconut.py     # COCONUT model
+│   │   ├── codi.py        # CODI model
+│   │   ├── colar.py       # CoLaR model
+│   │   ├── gpt2.py        # GPT-2 base models
+│   │   ├── llama.py       # LLaMA base models
+│   │   ├── loss.py        # Loss functions
+│   │   └── perturbation.py # Perturbation methods
+│   ├── annotate_data.py   # Data annotation script
+│   ├── train.py           # latentRM training script
+│   ├── trainer.py         # Training utilities
+│   ├── infer_gpt2.py      # GPT-2 inference
+│   ├── infer_llama.py     # LLaMA inference
+│   ├── infer_gpt2_rm.py   # latentRM-based inference
+│   ├── dataset.py         # Dataset handling
+│   ├── generation_mixin.py # Generation utilities
+│   ├── paths.py           # Path utilities
+│   └── utils.py           # Utility functions
+├── training_args/         # Training configurations
+│   └── train_coconut.yaml # COCONUT training config
+├── data/                  # Dataset files
+├── checkpoints/           # Model checkpoints
+│   └── latentRM/          # latentRM checkpoint
+├── run_annotation.sh      # Data annotation script
+├── run_tests.sh           # GPT-2 evaluation script
+├── run_tests_llama.sh     # LLaMA evaluation script
+├── run_tts_with_rm.sh     # Beam search evaluation script
+└── requirements.txt       # Python dependencies
+```
 
 ## 🤝 Join the Community <span id="community"></span>
 
-We welcome researchers, developers, and enthusiasts to join the **Project Name** community.  
-You can participate by reporting issues, contributing features, or sharing feedback to help us improve and grow the project. 
+We welcome researchers, developers, and enthusiasts to join the **LatentTTS** community.You can participate by reporting issues, contributing features, or sharing feedback to help us improve and grow the project.
 
-<!-- Optional social groups -->
-<!-- - <a href="{slack_link}">Join our Slack workspace</a> — Ideal for research discussions and development updates.  
-- <a href="{discord_link}">Join our Discord server</a> — Community-driven space for questions, ideas, and feedback.  
-- <a href="{wechat_or_feishu_link}">Join our WeChat / Feishu group</a> — Regional/community group (optional).   -->
-
-<div align="center">
-
-<!-- Contributors -->
-**We thank all our contributors for their valuable contributions.**
-<a href="https://github.com/xxx/xxx/contributors">
-  <img src="https://contrib.rocks/image?repo=xxx/xxx" />
-</a>
-
-<br/><br/>
-
-<!-- Star history chart -->
-[![Star History Chart](https://api.star-history.com/svg?repos=xxx/xxx&type=Date)](https://star-history.com/xxx/xxx&Date)
-
-</div>
-
-
-<!--
-Acknowledgements & Citation
-
-
-ACKNOWLEDGEMENTS:
-1. Credit any external libraries, toolkits, or frameworks the project depends on.
-2. Cite related repositories if this project builds upon or is inspired by them.
-3. Acknowledge dataset sources if used.
-4. Claim on licensing or usage rights.
-  1. MIT License (default):
-     Use this for most research code releases when no usage restrictions are required.
-  2. Apache License 2.0:
-     Use this for larger frameworks or systems when explicit patent protection is desired.
-  3. Non-Commercial (NC):
-     Use this only when the project or data must restrict commercial usage.
-5. Acknowledge funding, labs, collaborators, or mentors (optional).
-
-
-CITATION:
-1. Provide BibTeX for the project’s paper.
-2. If the paper is not yet published, use an arXiv placeholder.
-
--->
-
+> [!TIP]
+> 📄 Explore the paper on [**Hugging Face Papers**](https://huggingface.co/papers/2510.07745) — it includes community discussions, citation tools, and related resources. If you find our work insightful, please consider giving it an **upvote** to support further research!
 
 ## 🌱 **Acknowledgements** <span id="acknowledgements"></span>
 
-We would like to thank the contributors, open-source projects, and research communities whose work made **{Project Name}** possible. This project builds upon ideas, tools, and datasets developed by the broader machine learning and information retrieval ecosystem. We also acknowledge helpful discussions and support from the members of **Modality Dance Lab** and the open-source community.
+We would like to thank the contributors, open-source projects, and research communities whose work made **LatentTTS** possible. This project builds upon ideas, tools, and datasets developed by the broader machine learning and reasoning research ecosystem. We also acknowledge helpful discussions and support from the members of **Modality Dance Group** and the open-source community.
 
-This project is licensed under the **License Name**. Please refer to the LICENSE file for more details.
+This project is licensed under the **MIT License**. Please refer to the LICENSE file for more details.
 
-### 🔗 Related Projects
 
-<div align="center">
+## 🔗 **Related Projects** <span id="related"></span>
 
-<table>
-<tr>
-<td align="center">
-  <b>🌟 Related Project 1</b><br/>
-  <a href="{project_link_1}">{project_link_1}</a>
-</td>
-<td align="center">
-  <b>🚀 Related Project 2</b><br/>
-  <a href="{project_link_2}">{project_link_2}</a>
-</td>
-<td align="center">
-  <b>🔧 Related Project 3</b><br/>
-  <a href="{project_link_3}">{project_link_3}</a>
-</td>
-</tr>
-</table>
+### 📄 Related Papers
 
-</div>
+- **[LLMs are Single-threaded Reasoners: Demystifying the Working Mechanism of Soft Thinking](https://arxiv.org/abs/2508.03440)**  
+  Check out stochastic soft thinking!
+
+### 🌟 Awesome Collections
+
+- **[Awesome Latent Space](https://github.com/YU-deep/Awesome-Latent-Space)**  
+  A curated collection of resources on latent space methods and applications.
+
+- **[Awesome Latent CoT](https://github.com/EIT-NLP/Awesome-Latent-CoT)**  
+  A comprehensive list of latent chain-of-thought reasoning resources.
+
+- **[Awesome Efficient Reasoning](https://github.com/hemingkx/Awesome-Efficient-Reasoning)**  
+  A collection of efficient reasoning methods and techniques.
 
 
 ## 📚 **Citation** <span id="citation"></span>
 
-If you use **{Project Name}** in your research or applications, please consider citing:
+If you use **LatentTTS** in your research or applications, please consider citing:
 
 ```bibtex
-@article{yourproject2025,
-  title        = {{Project Name}: {Short descriptive subtitle}},
-  author       = {Your Name and Collaborator Name and Others},
-  journal      = {arXiv preprint arXiv:{xxxx.xxxxx}},
-  year         = {2025}
+@misc{you2025paralleltesttimescalinglatent,
+      title={Parallel Test-Time Scaling for Latent Reasoning Models}, 
+      author={Runyang You and Yongqi Li and Meng Liu and Wenjie Wang and Liqiang Nie and Wenjie Li},
+      year={2025},
+      eprint={2510.07745},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2510.07745}, 
 }
 ```
 
-<!-- Modify the repository URL accordingly. -->
-
 <div align="center">
 
-<a href="https://github.com/{github_org}/{repo_name}">
-  <img src="https://img.shields.io/badge/⭐ Star%20us%20on%20GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
-</a>
-
-<a href="https://github.com/{github_org}/{repo_name}/issues">
-  <img src="https://img.shields.io/badge/🐞 Report%20Issues-e74c3c?style=for-the-badge&logo=github" />
-</a>
-
-<a href="https://github.com/{github_org}/{repo_name}/discussions">
-  <img src="https://img.shields.io/badge/💬 Discussions-20c997?style=for-the-badge&logo=github" />
-</a>
-<br/>
-⭐ <b>Thank you for visiting {Project Name}!</b> ⭐
+⭐ `<b>`Thank you for visiting LatentTTS!`</b>` ⭐
 
 </div>
