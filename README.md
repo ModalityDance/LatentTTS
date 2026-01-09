@@ -54,6 +54,7 @@ Built-in evaluation pipelines for multiple benchmarks (GSM8K Test, GSM8K Hard, M
   * [Installation](#installation)
   * [Data](#data)
   * [Running](#running)
+* [✨ How It Works](#how-it-works)
 * [📁 Project Structure](#project-structure)
 * [🤝 Community](#community)
 * [🌱 Acknowledgements](#acknowledgements)
@@ -83,6 +84,10 @@ pip install -r requirements.txt
 * Frameworks: **PyTorch 2.8.0, Transformers 4.52.4, Accelerate 1.7.0**
 
 ### 2. Data Preparation <span id="data"></span>
+
+#### **Dataset**
+
+The datasets are located in the `/data` directory. These datasets are obtained from the [coconut](https://github.com/facebookresearch/coconut) project.
 
 #### **Data Annotation**
 
@@ -164,6 +169,43 @@ This script will:
 - Test beam search with different `beam size` (1, 2, 4, 8)
 - Test Best-of-N with different `n_return_sequences` (1, 4, 16, 64)
 - Generate logs for different configurations
+
+
+
+<!--
+How It Works (Methods Overview)
+
+
+GOALS OF THIS SECTION:
+1. Provide a clear and brief explanation of how the system or method works.
+2. Make this understandable even for readers who do not yet know the technical details.
+
+Points:
+1. A high-level description of the system architecture or method.
+2. Key components/modules and their roles.
+3. A step-by-step workflow of the main process.
+4. Figures or diagrams to illustrate the method.
+
+Or:
+
+you can organize in your own way as long as it meets the goals above!!!
+
+-->
+
+## ✨ How It Works <span id="how-it-works"></span>
+
+🪐 **LatentTTS** is built around a modular research pipeline for **parallel test-time scaling of latent reasoning models**, where each component corresponds to a well-defined stage in the overall method.  
+The system separates input processing, stochastic latent reasoning, and reward-guided selection into independent modules, allowing controlled experimentation and analysis.  
+This design enables flexible replacement of individual components (e.g., switching between dropout and noise sampling, or different backbone models) without affecting the rest of the pipeline.
+
+At a high level, the workflow proceeds as follows:
+
+1. **Input Processing and Tokenization** — Raw problem inputs (e.g., math word problems) are tokenized and prepared with special latent tokens (`<|latent|>`, `<|start-latent|>`, `<|end-latent|>`). The model processes these inputs through its embedding layer, setting up the context for latent reasoning generation.  
+2. **Stochastic Latent Reasoning Generation** — The model generates multiple diverse reasoning paths in the continuous latent space using one of two stochastic sampling methods: **Monte Carlo Dropout** (randomly dropping activations during forward passes to create variability) or **Additive Gaussian Noise** (injecting noise directly into latent embeddings). Each sampling method explores different regions of the latent thought space, producing varied reasoning trajectories for the same input.  
+3. **Reward-Guided Selection and Output Generation** — The trained **Latent Reward Model (LatentRM)** evaluates the quality of each generated reasoning path by scoring latent embeddings. Based on these scores, the system applies either **best-of-N selection** (choosing the top-N highest-scoring paths) or **beam search** (maintaining multiple high-quality candidates during generation) to identify the most promising reasoning paths. The final answer is extracted from the selected path, significantly improving accuracy through parallel exploration and intelligent selection.
+
+
+
 
 
 ## 📁 Project Structure <span id="project-structure"></span>
