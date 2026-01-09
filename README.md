@@ -24,7 +24,7 @@
     <img src="https://img.shields.io/badge/HuggingFace-Papers-fcc21b?style=for-the-badge&logo=huggingface&logoColor=white" alt="HF Papers">
   </a>
 
-<img src="./assets/main.png" alt="Project Logo" width="800">
+<img src="./assets/main_no_caption.png" alt="Project Logo" width="800">
 
 </div>
 
