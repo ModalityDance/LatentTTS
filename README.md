@@ -52,7 +52,6 @@ Built-in evaluation pipelines for multiple benchmarks (GSM8K Test, GSM8K Hard, M
   * [Installation](#installation)
   * [Data](#data)
   * [Running](#running)
-* [✨ How It Works](#how-it-works)
 * [📁 Project Structure](#project-structure)
 * [🤝 Community](#community)
 * [🌱 Acknowledgements](#acknowledgements)
@@ -147,7 +146,7 @@ Run comprehensive evaluation using majority voting and coverage metrics:
 These scripts will:
 
 - Test different sampling strategies (dropout, noise)
-- Evaluate on multiple datasets (GSM-Test, MultiArith, GSM-Hard)
+- Evaluate on multiple datasets (GSM8K Test, MultiArith, GSM8K Hard)
 - Generate detailed performance metrics including Pass@k, Coverage, and Voting Accuracy
 
 ##### **Beam Search and Best-of-N Testing**
@@ -202,7 +201,7 @@ latent-tts/
 
 ## 🤝 Join the Community <span id="community"></span>
 
-We welcome researchers, developers, and enthusiasts to join the **LatentTTS** community.You can participate by reporting issues, contributing features, or sharing feedback to help us improve and grow the project.
+We welcome researchers, developers, and enthusiasts to join the **LatentTTS** community. You can participate by reporting issues, contributing features, or sharing feedback to help us improve and grow the project.
 
 > [!TIP]
 > 📄 Explore the paper on [**Hugging Face Papers**](https://huggingface.co/papers/2510.07745) — it includes community discussions, citation tools, and related resources. If you find our work insightful, please consider giving it an **upvote** to support further research!
@@ -248,9 +247,3 @@ If you use **LatentTTS** in your research or applications, please consider citin
       url={https://arxiv.org/abs/2510.07745}, 
 }
 ```
-
-<div align="center">
-
-⭐ `<b>`Thank you for visiting LatentTTS!`</b>` ⭐
-
-</div>
