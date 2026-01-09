@@ -36,18 +36,21 @@ This is the implementation for the paper [**Parallel Test-Time Scaling for Laten
 
 ### 🪐 Key Features
 
+> [!IMPORTANT]
+> **🧩 Full Transformers Integration**
+> All models (COCONUT, CODI, and CoLaR) are **seamlessly integrated with Transformers**, providing native support for:
+> - ✅ **Batch processing** for efficient parallel inference
+> - ✅ **Standard Transformers APIs** (`generate()`, `from_pretrained()`, etc.)
+> - ✅ **Device management** with `device_map` and multi-GPU support
+> - ✅ **Easy integration** into existing Transformers-based workflows
+> 
+> Simply use `model.generate()` with batch inputs just like any other Transformers model!
+
 🧭 **Stochastic Sampling Methods**
 Two complementary approaches for exploring continuous thought spaces: Monte Carlo Dropout and Additive Gaussian Noise, enabling diverse reasoning path generation during inference.
 
 🌌 **Latent Reward Model (LatentRM)**
 A trained reward model that guides best-of-N selection and beam search, significantly improving reasoning accuracy by identifying high-quality latent reasoning paths.
-
-🧩 **Multi-Backbone Support**
-Comprehensive support for COCONUT, CODI, and CoLaR frameworks, making it easy to apply test-time scaling techniques across different latent reasoning architectures.
-
-🔬 **Comprehensive Evaluation**
-Built-in evaluation pipelines for multiple benchmarks (GSM8K Test, GSM8K Hard, MultiArith) with metrics including Pass@k, Coverage, and Voting Accuracy.
-
 
 
 ## 📑 Table of Contents <span id="table-of-contents"></span>
@@ -85,11 +88,91 @@ pip install -r requirements.txt
 * CUDA: **Compatible with PyTorch 2.8.0**
 * Frameworks: **PyTorch 2.8.0, Transformers 4.52.4, Accelerate 1.7.0**
 
-### 2. Data Preparation <span id="data"></span>
+### 2. Preparation <span id="data"></span>
 
 #### **Dataset**
 
 The datasets are located in the `/data` directory. These datasets are obtained from the [coconut](https://github.com/facebookresearch/coconut) project.
+
+#### **Latent Reasoning Models**
+
+Download the pre-trained models from HuggingFace to the `checkpoints/` directory:
+
+```bash
+# Download COCONUT model
+huggingface-cli download dd101bb/latent-tts-coconut --local-dir checkpoints/coconut
+
+# Download CODI model
+huggingface-cli download dd101bb/latent-tts-codi --local-dir checkpoints/codi
+
+# Download CoLaR model
+huggingface-cli download dd101bb/latent-tts-colar --local-dir checkpoints/colar
+
+# Optionally download LatentRM (for reward-guided generation)
+huggingface-cli download dd101bb/latentRM --local-dir checkpoints/latentRM
+```
+
+**Simple Generation Example**
+
+Here's a minimal example of using `.generate()` with a latent reasoning model:
+
+```python
+from transformers import AutoTokenizer
+from src.generation_mixin import LatentGenerationMixin, LatentGenerationConfig
+from src.paths import MODELS
+
+# Load tokenizer
+model_type = "coconut"  # or "codi", "colar"
+model_id = MODELS[model_type]["id"]
+tokenizer = AutoTokenizer.from_pretrained(model_id)
+if tokenizer.pad_token is None:
+    tokenizer.pad_token = tokenizer.eos_token
+
+# Get latent token IDs
+latent_id = tokenizer.convert_tokens_to_ids("<|latent|>")
+start_id = tokenizer.convert_tokens_to_ids("<|start-latent|>")
+end_id = tokenizer.convert_tokens_to_ids("<|end-latent|>")
+
+# Create model class with generation mixin
+class LatentModel(MODELS[model_type]["class"], LatentGenerationMixin):
+    def __init__(self, config):
+        super().__init__(config)
+
+# Load model
+model = LatentModel.from_pretrained(
+    model_id,
+    latent_id=latent_id,
+    latent_start_id=start_id,
+    latent_end_id=end_id,
+    device_map="auto",
+)
+
+# Prepare input
+question = "What is 2 + 2?\n<|start-latent|>"
+inputs = tokenizer(question, return_tensors="pt").to(model.device)
+
+# Configure generation
+generation_config = LatentGenerationConfig(
+    max_new_tokens=512,
+    latent_length=6,
+    latent_do_sample=True,
+    latent_do_sample_by="dropout",  # or "noise"
+    dropout_p=0.1,
+    pad_token_id=tokenizer.pad_token_id,
+    eos_token_id=tokenizer.eos_token_id,
+)
+
+# Generate
+output = model.generate(
+    **inputs,
+    generation_config=generation_config,
+    num_return_sequences=1,
+)
+
+# Decode result
+result = tokenizer.decode(output[0], skip_special_tokens=True)
+print(result)
+```
 
 #### **Data Annotation**
 
@@ -238,6 +321,7 @@ latent-tts/
 ├── data/                  # Dataset files
 ├── checkpoints/           # Model checkpoints
 │   └── latentRM/          # latentRM checkpoint
+|   └── coconut/
 ├── run_annotation.sh      # Data annotation script
 ├── run_tests.sh           # GPT-2 evaluation script
 ├── run_tests_llama.sh     # LLaMA evaluation script

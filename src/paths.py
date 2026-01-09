@@ -33,7 +33,7 @@ def colar_extract_answer_number(sentence: str) -> float:
 MODELS = {
     "coconut": {
         "class": COCONUTGPT2,
-        "id": "../coconut/checkpoints/converted",
+        "id": "checkpoints/coconut",
         "answer_extractor": coconut_extract_answer_number,
     },
     "codi": {
