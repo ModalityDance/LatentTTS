@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <h1 align="center">LatentTTS</h1>
+  <img src="https://readme-typing-svg.herokuapp.com?font=PT+Serif&weight=600&size=32&pause=1000&color=398447&center=true&vCenter=true&repeat=false&width=800&lines=Parallel+Test-Time+Scaling+for+Latent+Reasoning+Models" alt="Typing SVG" width="900"/>
 </div>
 
 <div align="center">
