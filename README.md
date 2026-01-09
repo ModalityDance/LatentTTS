@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=PT+Serif&weight=600&size=32&pause=1000&color=398447&center=true&vCenter=true&repeat=false&width=800&lines=Parallel+Test-Time+Scaling+for+Latent+Reasoning+Models" alt="Typing SVG" width="900"/>
+  <img src="https://readme-typing-svg.herokuapp.com?font=PT+Serif&weight=600&duration=3000&size=32&pause=1000&color=398447&center=true&vCenter=true&repeat=false&width=800&lines=Parallel+Test-Time+Scaling+for+Latent+Reasoning+Models" alt="Typing SVG" width="900"/>
 </div>
 
 <div align="center">
@@ -9,24 +9,26 @@
 <!-- Paper Link -->
 
 <a href="https://arxiv.org/abs/2510.07745">
-    <img src="https://img.shields.io/badge/Paper-arXiv-b31b1b?style=for-the-badge&logo=arxiv" alt="Paper">
+    <img src="https://img.shields.io/badge/Paper-arXiv-b31b1b?style=for-the-badge&logo=arxiv" alt="Paper" height="18">
   </a>
 
 <!-- HuggingFace Models -->
 
 <a href="https://huggingface.co/dd101bb/latentRM">
-    <img src="https://img.shields.io/badge/HuggingFace-Models-fcc21b?style=for-the-badge&logo=huggingface&logoColor=white" alt="HF Models">
+    <img src="https://img.shields.io/badge/HuggingFace-Models-fcc21b?style=for-the-badge&logo=huggingface&logoColor=white" alt="HF Models"   height="18">
   </a>
 
 <!-- HuggingFace Papers -->
 
 <a href="https://huggingface.co/papers/2510.07745">
-    <img src="https://img.shields.io/badge/HuggingFace-Papers-fcc21b?style=for-the-badge&logo=huggingface&logoColor=white" alt="HF Papers">
+    <img src="https://img.shields.io/badge/HuggingFace-Papers-fcc21b?style=for-the-badge&logo=huggingface&logoColor=white" alt="HF Papers"   height="18">
   </a>
 
 <img src="./assets/main_no_caption.png" alt="Project Logo" width="800">
 
 </div>
+
+---
 
 This is the implementation for the paper [**Parallel Test-Time Scaling for Latent Reasoning Models**](https://huggingface.co/papers/2510.07745), enabling efficient exploration of continuous thought spaces through stochastic sampling and reward model-guided search. It provides implementations of two stochastic sampling methods (Monte Carlo Dropout and Additive Gaussian Noise) and a LatentRM for best-of-N and beam search strategies. This repository includes training scripts, evaluation pipelines, and inference code for multiple backbone models including COCONUT, CODI, and CoLaR, evaluated on benchmarks such as GSM8K Test, GSM8K Hard, and MultiArith.
 
