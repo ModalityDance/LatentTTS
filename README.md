@@ -1,7 +1,9 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=PT+Serif&weight=600&duration=3000&size=32&pause=1000&color=398447&center=true&vCenter=true&repeat=false&width=800&lines=Parallel+Test-Time+Scaling+for+Latent+Reasoning+Models" alt="Typing SVG" width="900"/>
+
+<h1>Parallel Test-Time Scaling for Latent Reasoning Models</h1>
+
 </div>
 
 <div align="center">
