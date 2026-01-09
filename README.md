@@ -291,3 +291,18 @@ If you use **LatentTTS** in your research or applications, please consider citin
       url={https://arxiv.org/abs/2510.07745}, 
 }
 ```
+
+---
+
+<div align="center">
+
+<a href="https://github.com/ModalityDance/LatentTTS">
+  <img src="https://img.shields.io/badge/⭐ Star%20us%20on%20GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
+</a>
+
+<a href="https://github.com/ModalityDance/LatentTTS/issues">
+  <img src="https://img.shields.io/badge/🐞 Report%20Issues-e74c3c?style=for-the-badge&logo=github" />
+</a>
+
+
+</div>
