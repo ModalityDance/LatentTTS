@@ -16,7 +16,7 @@
 
 <!-- HuggingFace Models -->
 
-<a href="https://huggingface.co/dd101bb/latentRM">
+<a href="https://huggingface.co/collections/ModalityDance/latent-tts">
     <img src="https://img.shields.io/badge/HuggingFace-Models-fcc21b?style=for-the-badge&logo=huggingface&logoColor=white" alt="HF Models"   height="18">
   </a>
 
@@ -100,16 +100,16 @@ Download the pre-trained models from HuggingFace to the `checkpoints/` directory
 
 ```bash
 # Download COCONUT model
-huggingface-cli download dd101bb/latent-tts-coconut --local-dir checkpoints/coconut
+huggingface-cli download ModalityDance/latent-tts-coconut --local-dir checkpoints/coconut
 
 # Download CODI model
-huggingface-cli download dd101bb/latent-tts-codi --local-dir checkpoints/codi
+huggingface-cli download ModalityDance/latent-tts-codi --local-dir checkpoints/codi
 
 # Download CoLaR model
-huggingface-cli download dd101bb/latent-tts-colar --local-dir checkpoints/colar
+huggingface-cli download ModalityDance/latent-tts-colar --local-dir checkpoints/colar
 
 # Optionally download LatentRM (for reward-guided generation)
-huggingface-cli download dd101bb/latentRM --local-dir checkpoints/latentRM
+huggingface-cli download ModalityDance/latent-tts-rm --local-dir checkpoints/latentRM
 ```
 
 **Simple Generation Example**
@@ -219,7 +219,7 @@ The training process will:
 - Save checkpoints and evaluation results
 
 > [!NOTE]
-> Pre-trained checkpoint for COCONUT is available at [HuggingFace](https://huggingface.co/dd101bb/latentRM).
+> Pre-trained checkpoint is available at [HuggingFace](https://huggingface.co/ModalityDance/latent-tts-rm).
 
 #### **Evaluation and Testing**
 
