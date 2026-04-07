@@ -34,9 +34,16 @@
 
 This is the implementation for the paper [**Parallel Test-Time Scaling for Latent Reasoning Models**](https://huggingface.co/papers/2510.07745), enabling efficient exploration of continuous thought spaces through stochastic sampling and reward model-guided search. It provides implementations of two stochastic sampling methods (Monte Carlo Dropout and Additive Gaussian Noise) and a LatentRM for best-of-N and beam search strategies. This repository includes training scripts, evaluation pipelines, and inference code for multiple backbone models including COCONUT, CODI, and CoLaR, evaluated on benchmarks such as GSM8K Test, GSM8K Hard, and MultiArith.
 
+
+<!-- ACL 2026 Main Conference -->
+
+<div align="center">
+  <img src="./assets/accepted.png" alt="Accepted at ACL 2026 (Main Conference)" width="320">
+</div>
+
+
 ### 🪐 Key Features
 
-> [!IMPORTANT]
 > **🧩 Full Transformers Integration**
 > All models (COCONUT, CODI, and CoLaR) are **seamlessly integrated with Transformers**, providing native support for:
 > - ✅ **Batch processing** for efficient parallel inference
