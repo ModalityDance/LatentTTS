@@ -38,7 +38,7 @@ This is the implementation for the paper [**Parallel Test-Time Scaling for Laten
 <!-- ACL 2026 Main Conference -->
 
 <div align="center">
-  <img src="./assets/accepted.png" alt="Accepted at ACL 2026 (Main Conference)" width="320">
+  <img src="./assets/accepted.png" alt="Accepted at ACL 2026 (Main Conference)" width="450">
 </div>
 
 
