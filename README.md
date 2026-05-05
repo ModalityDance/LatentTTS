@@ -368,6 +368,9 @@ This project is licensed under the **MIT License**. Please refer to the LICENSE 
 - **[Awesome Efficient Reasoning](https://github.com/hemingkx/Awesome-Efficient-Reasoning)**  
   A collection of efficient reasoning methods and techniques.
 
+- **[Awesome Latent Refinement](https://github.com/matinaghaei/awesome-latent-refinement)**
+  A curated list of research on iterative latent reasoning, recurrent refinement, and inference-time compute.
+
 
 ## 📚 **Citation** <span id="citation"></span>
 
